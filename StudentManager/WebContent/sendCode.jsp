@@ -56,7 +56,7 @@
         }else {
             int x = (int) (1000 + Math.random() * (9999 - 1000 + 1));
             String toMail = teacher.getEmail();
-            String title = "Mã xác nhận";
+            String title = "Hệ thống quản lý giáo dục! Mã xác minh";
             String content = Integer.toString(x);
 
             try {
@@ -118,16 +118,20 @@
         } else {
             int x = (int) (1000 + Math.random() * (9999 - 1000 + 1));
             String toMail = student.getEmail();
-            String title = "Mã xác nhận";
+            String title = "Hệ thống quản lý giáo dục! Mã xác minh";
             String content = Integer.toString(x);
 
             try {
                 Properties prop = new Properties();
-                prop.put("mail.smtp.auth", true);
+				prop.put("mail.smtp.host", "smtp.gmail.com");
+                prop.put("mail.smtp.port", "587");
+                prop.put("mail.smtp.auth", "true");
+                prop.put("mail.smtp.starttls.enable", "true");
+                
                 Session s = Session.getInstance(prop);
 
                 MimeMessage message = new MimeMessage(s);
-                message.setFrom(new InternetAddress("434935656@qq.com"));
+                message.setFrom(new InternetAddress("vinhduyetnguyen38@gmail.com"));
                 message.setRecipient(Message.RecipientType.TO, new InternetAddress(toMail));
 
                 message.setSubject(title);
@@ -136,7 +140,7 @@
                 message.saveChanges();
 
                 Transport transport = s.getTransport("smtp");
-                transport.connect("smtp.qq.com", "434935656@qq.com", "ylwaxdtbeogbcacc");
+                transport.connect("smtp.gmail.com", "vinhduyetnguyen38@gmail.com", "Vinhduyet721999");
                 transport.sendMessage(message, message.getAllRecipients());
                 transport.close();
                 session.setAttribute("reset", content);
@@ -145,11 +149,11 @@
                 <div class="main">
                     <form role="form" action="student/resetPassword.jsp" method="post">
                         <div class="form-group" align="center">
-                            <input class="form-control" type="text" name="reset" placeholder="验证码"><br>
+                            <input class="form-control" type="text" name="reset" placeholder="Mã xác minh"><br>
                             <input type="hidden" name="id" value="<%=id%>">
                             <input name="email" value="<%=toMail%>" type="hidden">
                             <input type="submit" class="btn btn-success" value="下一步">
-                            <input type="button" class="btn btn-info" value="取消" style="margin-left: 20px" onclick="window.location.href='login.jsp'">
+                            <input type="button" class="btn btn-info" value="Hủy bỏ" style="margin-left: 20px" onclick="window.location.href='login.jsp'">
                         </div>
                     </form>
                 </div>

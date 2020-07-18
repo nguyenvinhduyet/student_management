@@ -19,11 +19,11 @@
 <script>
     function check(form){
         if (form.user.value === "") {
-            alert("Vui lòng nhập tài khoản");
+            alert("Bạn chưa nhập Email");
             return false;
         }
         if (form.password.value === "") {
-            alert("Vui lòng nhập mật khẩu");
+            alert("Bạn chưa nhập mật khẩu");
             return false;
         }
         return true;
@@ -39,7 +39,7 @@
     </h5>
     <form action="check_login" method="post" onsubmit="return check(this)">
         <div class="form-group">
-            <input type="text" name="user" class="form-control user" placeholder="Vui lòng nhập tài khoản">
+            <input type="text" name="user" class="form-control user" placeholder="Vui lòng Email">
             <input type="password" name="password" class="form-control password" placeholder="Vui lòng nhập mật khẩu">
             <div class="remember-btn">
                 <input type="checkbox" name="remember" value="true">

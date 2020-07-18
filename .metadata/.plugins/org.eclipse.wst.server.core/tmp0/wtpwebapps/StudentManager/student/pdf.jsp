@@ -24,7 +24,7 @@
 </head>
 <body>
 <%
-//  制作PDF文件, 通过流的形式输送到客户端
+//  Tạo ra 1 tệp PDF lưu thông tin bảng điểm của sinh viên đó
     response.setContentType("application/pdf");
     response.addHeader("Content-Disposition", "attachment;filename=report.pdf");
 
@@ -43,7 +43,7 @@
         Font font = new Font(bf, 15, Font.NORMAL);
 
         doc.open();
-        Paragraph paragraph = new Paragraph("成绩单", font);
+        Paragraph paragraph = new Paragraph("Bảng điểm", font);
         paragraph.setAlignment(Element.ALIGN_CENTER);
         doc.add(paragraph);
         doc.add(new Paragraph(" "));
@@ -54,30 +54,30 @@
         table.getDefaultCell().setVerticalAlignment(Element.ALIGN_CENTER);
 
         PdfPCell cell;
-        cell = new PdfPCell(new Paragraph("学号", font));
+        cell = new PdfPCell(new Paragraph("Mã sinh viên", font));
         cell.setRowspan(2);
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setVerticalAlignment(Element.ALIGN_CENTER);
         table.addCell(cell);
 
-        cell = new PdfPCell(new Paragraph("姓名", font));
+        cell = new PdfPCell(new Paragraph("Họ tên", font));
         cell.setRowspan(2);
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         table.addCell(cell);
 
-        cell = new PdfPCell(new Paragraph("专业", font));
+        cell = new PdfPCell(new Paragraph("Chuyên ngành", font));
         cell.setRowspan(2);
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         table.addCell(cell);
 
-        cell = new PdfPCell(new Paragraph("成绩", font));
+        cell = new PdfPCell(new Paragraph("Kết quả", font));
         cell.setColspan(3);
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         table.addCell(cell);
 
-        table.addCell(new Paragraph("数据库", font));
-        table.addCell("Android");
-        table.addCell("JavaWeb");
+        table.addCell(new Paragraph("Điểm CSDL", font));
+        table.addCell("Điểm Android");
+        table.addCell("Điểm JavaWeb");
         table.addCell(id);
         table.addCell(new Paragraph(name, font));
         table.addCell(new Paragraph(major, font));

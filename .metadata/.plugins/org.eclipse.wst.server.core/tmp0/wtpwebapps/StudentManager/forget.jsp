@@ -17,7 +17,7 @@
 <div class="main">
     <form role="form" action="sendCode.jsp" method="post">
         <div class="form-group" align="center">
-            <input class="form-control" type="text" name="user" placeholder="Tên tài khoản"><br>
+            <input class="form-control" type="text" name="user" placeholder="Mã giáo viên | Mã sinh viên"><br>
             <input type="submit" class="btn btn-success" value="Tiếp tục">
             <input type="button"  class="btn btn-info" value="Hủy bỏ" style="margin-left: 20px" onclick="window.location.href='login.jsp'">
         </div>

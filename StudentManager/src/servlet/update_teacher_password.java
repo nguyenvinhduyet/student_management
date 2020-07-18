@@ -32,7 +32,7 @@ public class update_teacher_password extends HttpServlet {
 
         try {
             teacherD.updateTeacherPassword(id, password);
-            out.print("<script>alert(\"修改成功\");window.location.href='login.jsp';</script>");
+            out.print("<script>alert(\"Cập nhật thành công\");window.location.href='login.jsp';</script>");
         }
         catch (Exception e){
             out.print(e);

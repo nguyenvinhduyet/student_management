@@ -28,27 +28,27 @@
         </div>
         <div id="menu">
             <ul>
-                <li><a href="personal.jsp">个人信息</a></li>
-                <li class="current_page_item"><a href="main.jsp">成绩信息</a></li>
-                <li><a onclick="return confirm('确认退出?');" href="../exit">退出登录</a></li>
+                <li><a href="personal.jsp">Thông tin sinh viên</a></li>
+                <li class="current_page_item"><a href="main.jsp">Kết quả</a></li>
+                <li><a onclick="return confirm('Xác nhận đăng xuất');" href="../exit">Đăng xuất</a></li>
             </ul>
         </div>
     </div>
     <div id="main">
         <div class="top">
-            <h2>成绩信息</h2>
+            <h2>Kết quả</h2>
             <hr/>
         </div>
         <div class="table">
             <table width="800" frame="box" align="center">
                 <tr>
-                    <th height="35">学号</th>
-                    <th>姓名</th>
-                    <th>专业</th>
-                    <th>数据库</th>
-                    <th>Android</th>
-                    <th>JavaWeb</th>
-                    <th>操作</th>
+                    <th height="35">Mã sinh viên</th>
+                    <th>Họ tên</th>
+                    <th>Chuyên ngành</th>
+                    <th>Điểm CSDL</th>
+                    <th>Điểm Android</th>
+                    <th>Điểm JavaWeb</th>
+                    <th>Tùy chọn</th>
                 </tr>
                 <%
                     try {

@@ -28,15 +28,15 @@
         </div>
         <div id="menu">
             <ul>
-                <li class="current_page_item"><a href="personal.jsp">个人信息</a></li>
-                <li><a href="main.jsp">成绩信息</a></li>
-                <li><a onclick="return confirm('确认退出?');" href="../exit">退出登录</a></li>
+                <li class="current_page_item"><a href="personal.jsp">Thông tin sinh viên</a></li>
+                <li><a href="main.jsp">Kết quả</a></li>
+                <li><a onclick="return confirm('Xác nhận đăng xuất');" href="../exit">Đăng xuất</a></li>
             </ul>
         </div>
     </div>
     <div id="main">
         <div class="top">
-            <h2>个人信息</h2>
+            <h2>Thông tin cá nhân</h2>
             <hr/>
         </div>
         <div class="info">
@@ -44,45 +44,45 @@
             <form action="../upload_studentImg" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<%=student.getId()%>">
                 <input type="file" name="img">
-                <input type="submit" value="上传头像">
+                <input type="submit" value="Tải ảnh">
             </form>
 
             <form action="../update_student_email" method="post">
             <table width="400" frame="box" align="center" style="margin-top: 30px;">
                 <tr>
-                    <td style="font-size: 25px;font-weight: bold">学号</td>
+                    <td style="font-size: 25px;font-weight: bold">Mã sinh viên</td>
                     <td style="font-size: 25px;font-weight: bold"><%=student.getId()%></td>
                 </tr>
                 <tr>
-                    <td style="font-size: 25px;font-weight: bold">姓名</td>
+                    <td style="font-size: 25px;font-weight: bold">Họ tên</td>
                     <td style="font-size: 25px;font-weight: bold"><%=student.getName()%></td>
                 </tr>
                 <tr>
-                    <td style="font-size: 25px;font-weight: bold">性别</td>
+                    <td style="font-size: 25px;font-weight: bold">Giới tính</td>
                     <td style="font-size: 25px;font-weight: bold"><%=student.getSex()%></td>
                 </tr>
                 <tr>
-                    <td style="font-size: 25px;font-weight: bold">专业</td>
+                    <td style="font-size: 25px;font-weight: bold">Chuyên ngành</td>
                     <td style="font-size: 25px;font-weight: bold"><%=student.getMajor()%></td>
                 </tr>
             </table>
             </form>
-            <button class="password-btn" style="margin-top: 30px; height: 40px">修改安全信息</button>
+            <button class="password-btn" style="margin-top: 30px; height: 40px">Đổi mật khẩu</button>
         </div>
     </div>
 </div>
 
-<%--修改密码对话框--%>
-<div id="password-dialog" title="修改安全信息">
+<%--Thay đổi mật khẩu sinh viên--%>
+<div id="password-dialog" title="Đổi mật khẩu">
     <form id="password-form" method="post">
         <input type="hidden" name="id" value="<%=student.getId()%>">
-        邮箱: &nbsp;&nbsp;<input type="email" name="email" value="<%=student.getEmail()%>"><br><br>
-        新密码:<input type="password" name="password"><br>
+        Email: &nbsp;&nbsp;<input type="email" name="email" value="<%=student.getEmail()%>"><br><br>
+        Mật khẩu mới:<input type="password" name="password"><br>
         <hr>
-        <input style="float: right" type="submit" value="取消" onclick="function x() {
+        <input style="float: right" type="submit" value="Hủy bỏ" onclick="function x() {
           $('#add-dialog').dialog('close');
         }">
-        <input style="float: right; margin-right: 25px" type="submit" value="保存"
+        <input style="float: right; margin-right: 25px" type="submit" value="Xác nhận"
                onclick="this.form.action='../update_student_security'">
     </form>
 </div>

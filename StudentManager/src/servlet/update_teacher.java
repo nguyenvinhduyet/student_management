@@ -34,7 +34,8 @@ public class update_teacher extends HttpServlet {
         try {
             Teacher teacher = teacherD.updateTeacher(uid, name, sex, email, password);
             session.setAttribute("info", teacher);
-            out.print("<script>alert(\"保存成功！\");location.href = \"teacher/personal.jsp\";</script>");
+            //out.print("<script>alert(\"ä¿�å­˜æˆ�åŠŸï¼�\");location.href = \"teacher/personal.jsp\";</script>");
+            out.print("<script>alert(\"Cập nhật thành công\");location.href = \"teacher/personal.jsp\";</script>");
         }
         catch (Exception e){
             out.print(e);

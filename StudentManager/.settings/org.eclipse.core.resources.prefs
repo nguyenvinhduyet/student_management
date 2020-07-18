@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
 encoding//src/servlet/check_login.java=UTF-8
+encoding//src/servlet/update_teacher.java=UTF-8
+encoding//src/servlet/update_teacher_password.java=UTF-8
